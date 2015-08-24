@@ -1,0 +1,42 @@
+{
+  "name": "valid-sift",
+  "version": "0.0.0",
+  "description": "Check if something is a valid sift filter",
+  "license": "MIT",
+  "repository": "stoeffel/valid-sift",
+  "author": {
+    "name": "Stoeffel",
+    "email": "christoph.hermann@kaba.com",
+    "url": "stoeffel.github.io"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "develop": "nodangel --ignore node_modules --watch tests --watch module --exec 'npm run test'",
+    "test": "babel-node -r node_modules/.bin/isparta cover --report text --report html --report lcov node_modules/.bin/_mocha -- ./tests --compilers js:babel/register --reporter nyan  ",
+    "coveralls": "npm run test && cat ./coverage/lcov.info | coveralls",
+    "hint": "jshint ./module/*",
+    "transpile": "babel module --out-dir ./",
+    "prepublish": "npm run transpile",
+    "patch-release": "npm version patch && npm publish && git push --follow-tags",
+    "minor-release": "npm version minor && npm publish && git push --follow-tags",
+    "major-release": "npm version major && npm publish && git push --follow-tags"
+  },
+  "files": [
+    "index.js",
+    "operators.json"
+  ],
+  "keywords": [
+    ""
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "^5.8.20",
+    "coveralls": "^2.11.4",
+    "isparta": "^3.0.3",
+    "jshint": "^2.8.0",
+    "mocha": "^2.2.5",
+    "nodangel": "^1.3.8"
+  }
+}

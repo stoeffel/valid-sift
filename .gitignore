@@ -1,0 +1,14 @@
+node_modules
+npm-debug.log
+*.js
+!module/*.js
+!tests/*.js
+coverage
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
