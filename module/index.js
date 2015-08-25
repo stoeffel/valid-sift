@@ -16,13 +16,15 @@ function getKeys(filter) {
   }, []);
 }
 
+const isOperator = key => key.indexOf('$') === 0;
+
 function getOperatorsAndAttributes(filter) {
   const keys = getKeys(filter);
 
   return keys.reduce((keys, key) => {
     return {
-      operators: key.indexOf('$') === 0 ? [...keys.operators, key]: [...keys.operators],
-      attributes: key.indexOf('$') !== 0 ? [...keys.attributes, key]: [...keys.attributes]
+      operators: isOperator(key) ? [...keys.operators, key]: [...keys.operators],
+      attributes: !isOperator(key) ? [...keys.attributes, key]: [...keys.attributes]
     };
   }, {
     operators: [],
