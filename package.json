@@ -32,6 +32,8 @@
   "dependencies": {},
   "devDependencies": {
     "babel": "^5.8.20",
+    "babel-core": "^5.8.22",
+    "babel-plugin-array-includes": "^1.1.1",
     "coveralls": "^2.11.4",
     "isparta": "^3.0.3",
     "jshint": "^2.8.0",

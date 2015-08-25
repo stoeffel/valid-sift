@@ -1,4 +1,4 @@
-const OPERATORS = [
+const OPERATORS:Array = [
   "$in", "$nin", "$exists",
   "$gte", "$gt", "$lte",
   "$lt", "$eq", "$ne",
@@ -42,7 +42,7 @@ export default function validSift(filter, ...validAttributes) {
   } = getOperatorsAndAttributes(filter);
 
   if (operators.every(op => OPERATORS.includes(op)) &&
-    attributes.every(attr => validAttributes.includes(attr))) return true;
+    attributes.every(attr => validAttributes.indexOf(attr) >=0 )) return true;
 
   return false;
 };
