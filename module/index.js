@@ -1,4 +1,12 @@
-import OPERATORS from './operators';
+const OPERATORS = [
+  "$in", "$nin", "$exists",
+  "$gte", "$gt", "$lte",
+  "$lt", "$eq", "$ne",
+  "$mod", "$all", "$and",
+  "$or", "$nor", "$not",
+  "$size", "$type", "$regex",
+  "$where", "$elemMatch", "$options"
+];
 
 function getKeys(filter) {
   return Object.keys(filter).reduce((keys, key) => {

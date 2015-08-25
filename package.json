@@ -24,8 +24,7 @@
     "major-release": "npm version major && npm publish && git push --follow-tags"
   },
   "files": [
-    "index.js",
-    "operators.json"
+    "index.js"
   ],
   "keywords": [
     ""
