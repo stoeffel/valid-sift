@@ -1,6 +1,6 @@
 {
   "name": "valid-sift",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Check if something is a valid sift filter",
   "license": "MIT",
   "repository": "stoeffel/valid-sift",
