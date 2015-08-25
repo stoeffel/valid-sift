@@ -21,8 +21,8 @@ function getOperatorsAndAttributes(filter) {
 
   return keys.reduce((keys, key) => {
     return {
-      operators: key.startsWith('$')? [...keys.operators, key]: [...keys.operators],
-      attributes: !key.startsWith('$')? [...keys.attributes, key]: [...keys.attributes]
+      operators: key.indexOf('$') === 0 ? [...keys.operators, key]: [...keys.operators],
+      attributes: key.indexOf('$') !== 0 ? [...keys.attributes, key]: [...keys.attributes]
     };
   }, {
     operators: [],
