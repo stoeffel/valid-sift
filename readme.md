@@ -49,12 +49,12 @@ valid(siftFilter, ...allowedAttributes); // => false
 
 If you pass a filter with an invalid operator it returns `false`.
 ```js
-const unknownOperator = {
+const siftFilter = {
   id: {
-    $or: [{$eq: 12}, {$eq: 13}]
+    $or: [{$eq: 12}, {$nope: 13}]
   }
 };
-valid(unknownOperator); // => false
+valid(siftFilter); // => false
 ```
 
 ### API
