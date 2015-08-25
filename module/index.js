@@ -29,14 +29,12 @@ export default function validSift(filter, ...validAttributes) {
   if (['string', 'number'].includes(typeof filter)) return true;
   if (filter instanceof RegExp) return true;
 
-  if (Array.isArray(filter)) {} else {
-    let {
-      operators, attributes
-    } = getOperatorsAndAttributes(filter);
+  let {
+    operators, attributes
+  } = getOperatorsAndAttributes(filter);
 
-    if (operators.every(op => OPERATORS.includes(op)) &&
-      attributes.every(attr => validAttributes.includes(attr))) return true;
-  }
+  if (operators.every(op => OPERATORS.includes(op)) &&
+    attributes.every(attr => validAttributes.includes(attr))) return true;
 
   return false;
 };
