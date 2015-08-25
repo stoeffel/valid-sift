@@ -6,7 +6,7 @@
   "repository": "stoeffel/valid-sift",
   "author": {
     "name": "Stoeffel",
-    "email": "christoph.hermann@kaba.com",
+    "email": "schtoeffel@gmail.com",
     "url": "stoeffel.github.io"
   },
   "engines": {
@@ -27,7 +27,8 @@
     "index.js"
   ],
   "keywords": [
-    ""
+    "sift",
+    "validation"
   ],
   "dependencies": {},
   "devDependencies": {
