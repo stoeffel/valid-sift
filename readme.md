@@ -2,6 +2,7 @@
 
 > Check if something is a valid [sift][s] filter.
 
+[![NPM](https://nodei.co/npm/valid-sift.png?downloads=true&stars=true)](https://nodei.co/npm/valid-sift/)
 
 ## Install
 
