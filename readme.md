@@ -41,10 +41,13 @@ valid(siftFilter, ...allowedAttributes); // => true
 If you pass a filter with a not allowed attribute it returns `false`.
 ```js
 const siftFilter = {
-  id: {
+  id: { // <= `id` is not allowed
     $or: [{$eq: 12}, {$eq: 13}]
   }
 };
+
+const allowedAttributes = ['name', 'age'];
+
 valid(siftFilter, ...allowedAttributes); // => false
 ```
 
@@ -52,7 +55,7 @@ If you pass a filter with an invalid operator it returns `false`.
 ```js
 const siftFilter = {
   id: {
-    $or: [{$eq: 12}, {$nope: 13}]
+    $or: [{$eq: 12}, {$nope: 13}] // <= `$nope` isn't a valid operator
   }
 };
 valid(siftFilter); // => false
