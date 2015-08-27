@@ -62,8 +62,14 @@ valid(siftFilter); // => false
 
 `isValid(filter, [attribute, ...]) => boolean`
 
-`filter` - the filter to check.
-`attribute` - Allowed attributes in the filter.
+* `filter` - the filter to check.
+* `attribute` - Allowed attributes in the filter.
+
+or pass the attributes as an array.
+
+`isValid(filter, attributes) => boolean`
+
+* `attributes` - Allowed attributes in the filter as an array.
 
 
 ## License

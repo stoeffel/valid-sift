@@ -32,7 +32,12 @@ function getOperatorsAndAttributes(filter) {
   });
 }
 
-export default function validSift(filter, ...validAttributes) {
+export default function validSift(filter, validAttributesAsArray, ...validAttributes) {
+  if (Array.isArray(validAttributesAsArray)) {
+    validAttributes = validAttributesAsArray;
+  } else {
+    validAttributes = [validAttributesAsArray].concat(validAttributes);
+  }
   if (filter == null) return true;
   if (filter === true) return true;
   if (filter === false) return true;

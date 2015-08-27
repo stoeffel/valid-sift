@@ -27,6 +27,13 @@ describe('validSift', () => {
 		not(valid({ name: { $or: [{$eq: 'Max'}, {$ep: 'Moritz', age: 13}]}}, 'name'));
 	});
 
+	it('should take an array with allowed attributes too', () => {
+		is(valid({ name: { $or: [{$eq: 'Max'}, {$eq: 'Moritz', age: 13}]}}, ['name', 'age']));
+		is(valid({ name: { $or: [{$eq: 'Max'}]}}, ['name']));
+		not(valid({ name: { $or: [{$eq: 'Max'}, {$eq: 'Moritz', foo: 13}]}}, ['name', 'age']));
+		not(valid({ name: { $or: [{$eq: 'Max'}, {$eq: 'Moritz', foo: 13}]}}, ['name']));
+	});
+
 	it('should not change the filter', () => {
     const filter = { name: { $or: [{$eq: 'Max'}, {$eq: 'Moritz', age: 13}]}};
     const clone = Object.assign({}, filter);
